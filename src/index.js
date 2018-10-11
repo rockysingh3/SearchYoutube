@@ -1,12 +1,12 @@
-// import React, { Component } from 'react';
-// import ReactDom from 'react-dom';
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
 
-// class App extends Component {
-//   render(){
-//     return <h1>Hello world</h1>
-//   }
-// }
+class App extends Component {
+  render(){
+    return <h1>Hello world</h1>
+  }
+}
 
 
-// ReactDom.render(App, document.getElementByClass('container'));
+ReactDom.render(<App />, document.querySelector('.container'));

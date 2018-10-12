@@ -4,12 +4,10 @@ import YTSearch from 'youtube-api-search';
 
 // internal files
 import SearchBar from './Components/search_bar';
+import VideoList from './Components/video_list';
 import APIKEY from './helper/config';
 
-let term = 'fight';
-YTSearch({Key: APIKEY, term: term}, (data) => {
-  console.log(data);
-});
+
 
 
 
@@ -19,7 +17,7 @@ class App extends Component {
 
     this.state = { videos: [] }
 
-    YTSearch({Key: APIKEY, term: term}, (data) => {
+    YTSearch({key: APIKEY, term: 'fight'}, (data) => {
       this.setState({ videos: data });
     });
 
@@ -27,7 +25,10 @@ class App extends Component {
 
   render(){
     return (
-      <SearchBar/>
+      <div>
+        <SearchBar />
+        <VideoList videos={this.state.videos} />
+      </div>
     );
   }
 }
